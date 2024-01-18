@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+    <title>Topbar</title>
+    <style>
+        .main-content {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <section class="main-content">
+            <div class="card">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h1>Hello Topbar</h1>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <script src="vendor/topbar/jquery.js"></script>
+    <script src="vendor/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/topbar/topbar.js"></script>
+    <script src="vendor/topbar/topbar.js"></script>
+
+    <script>
+        function loadProgress(int) {
+            resetToDefaults();
+            topbar.show();
+            setTimeout(function () {
+                $('.main-content').fadeIn('slow');
+                topbar.hide();
+            }, int)
+        }
+
+        function resetToDefaults() {
+            topbar.config({
+                autoRun: true,
+                barThickness: 3,
+                barColors: {
+                    '0': 'rgba(26,  188, 156, .9)',
+                    '.25': 'rgba(52,  152, 219, .9)',
+                    '.50': 'rgba(241, 196, 15,  .9)',
+                    '.75': 'rgba(230, 126, 34,  .9)',
+                    '1.0': 'rgba(211, 84,  0,   .9)'
+                },
+                shadowBlur: 10,
+                shadowColor: 'rgba(0,   0,   0,   .6)',
+                className: 'topbar'
+            })
+        }
+        $(document).ready(() => {
+            resetToDefaults();
+            topbar.show();
+            setTimeout(function () {
+                $('.main-content').fadeIn('slow');
+                topbar.hide();
+            }, 1000)
+        });
+    </script>
+</body >
+</html >
